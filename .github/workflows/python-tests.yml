@@ -1,4 +1,4 @@
-name: Pruebas Unitarias de Python
+name: Pruebas de Integración y Sistema
 
 on:
   push:
@@ -24,6 +24,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install pytest
 
-    - name: Ejecutar pruebas con Pytest
+    - name: Ejecutar Pruebas Unitarias
       run: |
-        pytest
+        pytest test_funciones.py
+
+    - name: Ejecutar Pruebas de Integración
+      run: |
+        pytest test_integration.py
+
+    - name: Ejecutar Pruebas de Sistema
+      run: |
+        pytest test_system.py
